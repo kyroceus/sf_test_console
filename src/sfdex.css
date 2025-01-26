@@ -1,0 +1,49 @@
+.custom-coverage-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  background: #fff;
+  overflow-y: scroll;
+}
+
+.custom-coverage-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.custom-coverage-table tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+.custom-coverage-table tr th {
+  font-weight: bold;
+  background-color: #333;
+  color: #eee;
+}
+
+.custom-coverage-table tr th:last-child,
+.custom-coverage-table tr td:last-child {
+  width: 13%;
+}
+
+.custom-coverage-table tr th:nth-child(2),
+.custom-coverage-table tr td:nth-child(2) {
+  width: 9%;
+}
+
+
+.custom-coverage-table tr th,
+.custom-coverage-table tr td {
+  padding: 2px 4px;
+  font-size: 11px;
+  text-align: right;
+}
+
+.custom-coverage-table tr td:first-child,
+.custom-coverage-table tr th:first-child {
+  width: 78%;
+  text-align: left;
+}

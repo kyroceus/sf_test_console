@@ -1,0 +1,29 @@
+{
+  "name": "SF Test Console",
+  "description": "No more scrolling—find your test class coverage faster and boost productivity!",
+  "version": "1.0",
+  "author" : "kyroceus",
+  "manifest_version": 3,
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/sfdexdl.js"
+      ],
+      "matches": [
+        "https://*.my.salesforce.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+      {
+          "matches":["https://*.my.salesforce.com/_ui/common/apex/debug/ApexCSIPage"],
+          "js": ["src/loader.js"],
+          "css": ["src/sfdex.css"]
+      }
+  ],
+  "icons": {
+    "16": "assets/16x16.png",
+    "48": "assets/48x48.png",
+    "128": "assets/128x128.png"
+  }
+}
