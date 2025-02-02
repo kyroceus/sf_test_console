@@ -2,7 +2,7 @@
 Currently, a browser extension that will let you pin your most frequently used test classes for instant access, eliminating the need to scroll through endless lists. Planned to extend functionality in future.
 
 ## Where can it be downloaded?
-You can download this extension from the chrome webstore: (SF Test Console)[https://chromewebstore.google.com/detail/sf-test-console/niheaiahhiplpagjcohkjniidkflgalm?pli=1]
+You can download this extension from the chrome webstore: [SF Test Console](https://chromewebstore.google.com/detail/sf-test-console/niheaiahhiplpagjcohkjniidkflgalm?pli=1)
 
 ## To do
 - [ ] Use cometd subscribe instead of Mutation Observer to update code coverage table
