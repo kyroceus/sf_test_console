@@ -3,7 +3,6 @@ let testCoverage = {};
 const overlayDiv = document.createElement('div');
 overlayDiv.className = 'custom-coverage-container';
 overlayDiv.onclick = function(event) {
-    debugger;
     if(event.target.tagName === 'BUTTON') {
         pinOrUnpin(event);
     }
@@ -96,7 +95,7 @@ function getCoverageAndBuildTable() {
         {
             continuation: function(result) {
                 result.records.forEach(record => {
-                    if(record.NumLinesUncovered) {
+                    if(record.NumLinesUncovered + record.NumLinesCovered !== 0) {
                         testCoverage[record.ApexClassOrTrigger.Name] = parseInt(100 * record.NumLinesCovered / (record.NumLinesUncovered + record.NumLinesCovered)) + '%';
                     }
                 })
