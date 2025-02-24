@@ -1,7 +1,7 @@
 {
   "name": "SF Test Console",
   "description": "No more scrolling—find your test class coverage faster and boost productivity!",
-  "version": "1.0",
+  "version": "1.0.1",
   "author" : "kyroceus",
   "manifest_version": 3,
   "web_accessible_resources": [
