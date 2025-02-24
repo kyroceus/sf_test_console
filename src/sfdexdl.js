@@ -2,6 +2,12 @@ let testCoverage = {};
 
 const overlayDiv = document.createElement('div');
 overlayDiv.className = 'custom-coverage-container';
+overlayDiv.onclick = function(event) {
+    debugger;
+    if(event.target.tagName === 'BUTTON') {
+        pinOrUnpin(event);
+    }
+}
 
 const table = document.createElement('table');
 table.className = 'custom-coverage-table';
@@ -47,18 +53,20 @@ function updateOrCreateRow(name, coverage) {
     if(!row) {
         row = document.createElement('tr');
         row.id = name;
+        const td = document.createElement('td');
+        td.innerHTML = name;
+        row.append(td);
+        const td2 = document.createElement('td');
+        td2.innerHTML = coverage;
+        td2.className = 'covered';
+        row.append(td2);
+        const td3 = document.createElement('td');
+        td3.innerHTML = `<button data-class='${name}'>${isPinned ? 'Unpin' : 'Pin'}</button>`;
+        row.append(td3);
+    } else {
+        let coverageElement = row.querySelector('.covered');
+        coverageElement.innerHTML = coverage;
     }
-    row.innerHTML = '';
-    const td = document.createElement('td');
-    td.innerHTML = name;
-    row.append(td);
-    const td2 = document.createElement('td');
-    td2.innerHTML = coverage;
-    td2.className = 'covered';
-    row.append(td2);
-    const td3 = document.createElement('td');
-    td3.innerHTML = `<button data-class='${name}' onclick='pinOrUnpin(event);'>${isPinned ? 'Unpin' : 'Pin'}</button>`;
-    row.append(td3);
     if(isPinned) {
         table.prepend(row);
     } else {
